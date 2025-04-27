@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>stencil: <span id="stencil"></span></p>
+
+    <script>
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('webgl',{
+            stencil: true,
+        });
+        canvas.width = 800;
+        canvas.height = 600;
+        const attributes = ctx.getContextAttributes();
+        const stencil = attributes.stencil;
+      debugger
+        if(stencil){
+
+            document.getElementById('stencil').textContent = 'true';
+        }else{
+            document.getElementById('stencil').textContent = 'false';
+        }
+       
+
+        document.body.appendChild(canvas);
+
+        
+        
+        
+    </script>
+</body>
+</html>
